@@ -1,0 +1,496 @@
+<html>
+    <head>
+        <title>Squadle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale =0, user-scalable=no">
+
+        <link rel="stylesheet" href="squadle.css">
+        <script src="squadle.js"></script>
+    </head>
+
+    <body>
+
+        <p style="position: absolute; text-align: left;">Credits to Squad Busters, by Supercell for everything!</p>
+        <h1 id="title">Squadle</h1>
+        <h1 id="winstreakText">Win Streak: 0</h1>
+
+        <hr style="border: 3px solid magenta;">
+        <br>
+
+        <h1 style="position: absolute; right: 100px;">Hints:</h1>
+        
+        <br>
+        <h1 id="incorrectguesses">Incorrect Guesses: 0/3</h1>
+
+        <h2>Answer Here</h2>
+        <input type="text" id="answerInput" placeholder="Answer here."> <button id="enterbutton" onclick="answerSent()">Enter</button>
+
+        <br>
+
+        <h1 id="previousAnswerText">Previous Answer: ...</h1>
+        <img id="image" src="assets/images/SquadQuestionMark.png" alt="Image not found" width="500px" height="500px">
+
+        <h2 id="hint1" style="position: absolute; right: 0px; position: absolute; top: 250px; right: 100px;">Role = ....</h2>
+        <h2 id="hint2" style="position: absolute; right: 0px; position: absolute; top: 280px; right: 100px;">Originally from ....</h2>
+        <h2 id="hint3" style="position: absolute; right: 0px; position: absolute; top: 310px; right: 100px;">Rarity = ....</h2>
+
+        <h1 style="position: absolute; left: 250px;">Choices:</h1>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h2 style="position: absolute; left: 250px;">Heroes: (Role, Orgin, Rarity)</h2>
+        <br>
+        <br>
+        <br>
+        <ul>
+            <li style="position: absolute; left: 250px;">Archer Queen (Hotshot, Clash, Hero)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Barbarian King (Fighter, Clash, Hero)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Mortis (Summoner, Brawl Stars, Hero)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Royale King (Supplier, Clash, Hero)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Sonic (Speedster, Crossover, Hero)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Spike (Healer, Brawl Stars, Hero)</li>
+            <br>
+            <br>
+            <hr style="width: 100%; border: 3px solid magenta;">
+            <br>
+            <h2 style="position: absolute; left: 250px;">Squaddies: (Role, Orgin, Rarity)</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <li style="position: absolute; left: 250px;">Archer (Hotshot, Clash, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Bandit (Fighter, Clash, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Barbarian (Fighter, Clash, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Battle Healer (Healer, Clash, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Bea (Summoner, Brawl Stars, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Bo (Hotshot, Brawl Stars, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Chicken (Speedster, Hay Day, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Colonel Ruffs (Supplier, Brawl Stars, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Colt (Hotshot, Brawl Stars, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Dr. T (Summoner, Boom Beach, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Dynamike (Hotshot, Brawl Stars, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">El Primo (Fighter, Brawl Stars, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Elita-1 (Hotshot, Crossovers, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Frank (Fighter, Brawl Stars, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Goblin (Supplier, Clash, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Greg (Supplier, Hay Day, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Heavy (Hotshot, Boom Beach, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Hog Rider (Speedster, Clash, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Ice Wizard (Hotshot, Clash, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Jessie (Summoner, Brawl Stars, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Knuckles (Fighter, Crossovers, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Leon (Speedster, Brawl Stars, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Mavis (Supplier, Hay Day, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Max (Speedster, Brawl Stars, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Medic (Healer, Boom Beach, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Miner (Fighter, Clash, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Nita (Summoner, Brawl Stars, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Optimus Prime (Fighter, Crossovers, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Pam (Healer, Brawl Stars, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Penny (Supplier, Brawl Stars, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Poco (Healer, Brawl Stars, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Shelly (Hotshot, Brawl Stars, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Tails (Summoner, Crossovers, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Tank (Summoner, Boom Beach, Rare)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Trader (Supplier, Clash, Common)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Witch (Summoner, Clash, Epic)</li>
+            <br>
+            <li style="position: absolute; left: 250px;">Wizard (Hotshot, Clash, Rare)</li>
+            <br>
+        </ul>
+
+        <audio id="BustedSound" src="assets/audio/BustedSound.ogg"></audio>
+        <audio id="CorrectSound" src="assets/audio/CorrectSound.ogg"></audio>
+        <audio id="WrongSound" src="assets/audio/WrongSound.ogg"></audio>
+
+        <script>
+
+    let incorrectGuessesVal = 0;
+    let winstreakVal = 0;
+
+    const answerInputVal = document.getElementById('answerInput');
+    const imageVal = document.getElementById('image');
+    const hint1Text = document.getElementById('hint1');
+    const hint2Text = document.getElementById('hint2');
+    const hint3Text = document.getElementById('hint3');
+
+    let roleVal = 'blank';
+    let orginVal = 'blank';
+    let rarityVal = 'blank';
+
+    let answerRequirement = 'test';
+
+    function BustedSoundPlay() {
+        const BustedSoundEffect = document.getElementById("BustedSound");
+        BustedSoundEffect.play();
+    }
+
+    function CorrectSoundPlay() {
+        const CorrectSoundEffect = document.getElementById("CorrectSound");
+        CorrectSoundEffect.play();
+    }
+
+    function WrongSoundPlay() {
+        const WrongSoundEffect = document.getElementById("WrongSound");
+        WrongSoundEffect.play();
+    }
+
+function incorrectGuess() {
+    incorrectGuessesVal++;
+    document.getElementById('incorrectguesses').textContent = 'Incorrect Guesses: '+incorrectGuessesVal+'/3';
+    if (incorrectGuessesVal >= 1) {
+        wrongGuessHint2();
+        setHint2();
+        WrongSoundPlay();
+    }
+    if (incorrectGuessesVal >= 2) {
+        wrongGuessHint3();
+        setHint3();
+        WrongSoundPlay();
+    }
+
+    if (incorrectGuessesVal >= 3) {
+        answerTextShow();
+        resetHints();
+        resetWinStreak();
+        resetIncorrectGuesses();
+        BustedSoundPlay();
+        imageShow();
+        randomizeAnswer();
+        setHint1();
+    }
+}
+
+function setHint1() {
+
+    let FightersChoices = ['Barbarian King', 'Bandit', 'Barbarian', 'El Primo', 'Frank', 'Knuckles', 'Miner', 'Optimus Prime'];
+    let HotshotsChoices = ['Archer Queen', 'Archer', 'Bo', 'Colt', 'Dynamike', 'Elita-1', 'Heavy', 'Ice Wizard', 'Shelly', 'Wizard'];
+    let SummonersChoices = ['Mortis', 'Bea', 'Dr. T', 'Jessie', 'Nita', 'Tails', 'Tank', 'Witch'];
+    let HealersChoices = ['Spike', 'Battle Healer', 'Medic', 'Pam', 'Poco'];
+    let SpeedstersChoices = ['Sonic', 'Chicken', 'Hog Rider', 'Leon', 'Max'];
+    let SuppliersChoices = ['Royale King', 'Colonel Ruffs', 'Goblin', 'Greg', 'Mavis', 'Penny', 'Trader'];
+
+    if (FightersChoices.includes(answerRequirement)) {
+        roleVal = 'Fighter';
+    } else
+    if (HotshotsChoices.includes(answerRequirement)) {
+        roleVal = 'Hotshot';
+    } else
+    if (SummonersChoices.includes(answerRequirement)) {
+        roleVal = 'Summoner';
+    } else
+    if (HealersChoices.includes(answerRequirement)) {
+        roleVal = 'Healer';
+    } else
+    if (SpeedstersChoices.includes(answerRequirement)) {
+        roleVal = 'Speedster';
+    } else
+    if (SuppliersChoices.includes(answerRequirement)) {
+        roleVal = 'Supplier';
+    }
+
+    if (roleVal !== 'blank') {
+        hint1Text.textContent = 'Role = '+roleVal;
+    }
+}
+
+function setHint2() {
+    let BoomBeachChoices = ['Dr. T', 'Heavy', 'Medic', 'Tank'];
+    let BrawlStarsChoices = ['Mortis', 'Spike', 'Bea', 'Bo', 'Colonel Ruffs', 'Colt', 'Dynamike', 'El Primo', 'Frank', 'Jessie', 'Leon', 'Max', 'Nita', 'Pam', 'Penny', 'Poco', 'Shelly'];
+    let ClashRoyaleOrClashOfClansChoices = ['Barbarian King', 'Archer Queen', 'Royale King', 'Archer', 'Bandit', 'Barbarian', 'Battle Healer', 'Goblin', 'Hog Rider', 'Ice Wizard', 'Miner', 'Trader', 'Witch', 'Wizard'];
+    let HayDayChoices = ['Chicken', 'Greg', 'Mavis'];
+    let CrossoversChoices = ['Sonic', 'Elita-1', 'Optimus Prime', 'Knuckles', 'Tails'];
+
+    if (BoomBeachChoices.includes(answerRequirement)) {
+        orginVal = 'Boom Beach';
+    } else
+    if (BrawlStarsChoices.includes(answerRequirement)) {
+        orginVal = 'Brawl Stars';
+    } else
+    if (ClashRoyaleOrClashOfClansChoices.includes(answerRequirement)) {
+        orginVal = 'Clash';
+    } else
+    if (HayDayChoices.includes(answerRequirement)) {
+        orginVal = 'Hay Day';
+    } else
+    if (CrossoversChoices.includes(answerRequirement)) {
+        orginVal = 'Crossovers';
+    }
+
+    if (orginVal !== 'blank') {
+        hint2Text.textContent = 'Origionally from: '+orginVal;
+    }
+}
+
+function setHint3() {
+    let HeroesVal = ['Barbarian King', 'Royale King', 'Archer Queen', 'Mortis', 'Sonic', 'Spike'];
+    let CommonsVal = ['Barbarian', 'Bo', 'Chicken', 'Colt', 'El Primo', 'Goblin', 'Greg', 'Heavy', 'Mavis', 'Poco', 'Shelly', 'Trader'];
+    let RaresVal = ['Archer', 'Bandit', 'Dynamike', 'Frank', 'Hog Rider', 'Ice Wizard', 'Knuckles', 'Medic', 'Miner', 'Nita', 'Penny', 'Tank', 'Wizard'];
+    let EpicsVal = ['Battle Healer', 'Bea', 'Colonel Ruffs', 'Dr. T', 'Elita-1', 'Jessie', 'Leon', 'Max', 'Optimus Prime', 'Pam', 'Tails', 'Witch'];
+
+    if (HeroesVal.includes(answerRequirement)) {
+        rarityVal = 'Hero';
+    } else
+    if (CommonsVal.includes(answerRequirement)) {
+        rarityVal = 'Common';
+    } else
+    if (RaresVal.includes(answerRequirement)) {
+        rarityVal = 'Rare';
+    } else
+    if (EpicsVal.includes(answerRequirement)) {
+        rarityVal = 'Epic';
+    }
+
+    if (rarityVal !== 'blank') {
+        hint3Text.textContent = 'Rarity: '+rarityVal;
+    }
+}
+
+function randomizeAnswer() {
+    let randomAnswer = ['Barbarian King', 'Royale King', 'Archer Queen', 'Mortis', 'Sonic', 'Spike', 'Archer', 'Bandit', 'Barbarian', 'Battle Healer', 'Bea', 'Bo', 'Chicken', 'Colonel Ruffs', 'Colt', 'Dr. T', 'Dynamike', 'El Primo', 'Elita-1', 'Frank','Goblin', 'Greg', 'Heavy', 'Hog Rider', 'Ice Wizard', 'Jessie', 'Knuckles', 'Leon', 'Mavis', 'Max', 'Medic', 'Miner', 'Nita', 'Optimus Prime', 'Pam', 'Penny', 'Poco', 'Shelly', 'Tails', 'Tank', 'Trader', 'Witch', 'Wizard'];
+    let randomAnswerChosen = randomAnswer[Math.floor(Math.random() * randomAnswer.length)];
+    answerRequirement = randomAnswerChosen;
+}
+
+function resetIncorrectGuesses() {
+    incorrectGuessesVal = 0;
+    document.getElementById('incorrectguesses').textContent = 'Incorrect Guesses: '+incorrectGuessesVal+'/3';
+}
+
+function resetWinStreak() {
+    winstreakVal = 0;
+    document.getElementById('winstreakText').textContent = 'Winstreak: '+winstreakVal;
+}
+
+function resetHints() {
+    hint2Text.style.visibility = 'hidden';
+    hint3Text.style.visibility = 'hidden';
+}
+
+function imageShow() {
+    document.getElementById('image').src = 'assets/images/SquadQuestionMark.png';
+    if (document.getElementById('previousAnswerText').textContent.includes('Barbarian King')) {
+        document.getElementById('image').src = 'assets/images/BarbarianKing.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Royale King')) {
+        document.getElementById('image').src = 'assets/images/RoyaleKing.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Archer Queen')) {
+        document.getElementById('image').src = 'assets/images/ArcherQueen.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Mortis')) {
+        document.getElementById('image').src = 'assets/images/Mortis.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Sonic')) {
+        document.getElementById('image').src = 'assets/images/Sonic.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Spike')) {
+        document.getElementById('image').src = 'assets/images/Spike.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Archer')) {
+        document.getElementById('image').src = 'assets/images/Archer.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Bandit')) {
+        document.getElementById('image').src = 'assets/images/Bandit.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Barbarian')) {
+        document.getElementById('image').src = 'assets/images/Barbarian.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Battle Healer')) {
+        document.getElementById('image').src = 'assets/images/Battle_Healer.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Bea')) {
+        document.getElementById('image').src = 'assets/images/Bea.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Bo')) {
+        document.getElementById('image').src = 'assets/images/Bo.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Chicken')) {
+        document.getElementById('image').src = 'assets/images/Chicken.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Colonel Ruffs')) {
+        document.getElementById('image').src = 'assets/images/Colonel_Ruffs.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Colt')) {
+        document.getElementById('image').src = 'assets/images/Colt.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Dr. T')) {
+        document.getElementById('image').src = 'assets/images/Dr_T.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Dynamike')) {
+        document.getElementById('image').src = 'assets/images/Dynamike.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('El Primo')) {
+        document.getElementById('image').src = 'assets/images/El_Primo.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Elita-1')) {
+        document.getElementById('image').src = 'assets/images/Elita-1.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Frank')) {
+        document.getElementById('image').src = 'assets/images/Frank.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Goblin')) {
+        document.getElementById('image').src = 'assets/images/Goblin.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Greg')) {
+        document.getElementById('image').src = 'assets/images/Greg.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Heavy')) {
+        document.getElementById('image').src = 'assets/images/Heavy.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Hog Rider')) {
+        document.getElementById('image').src = 'assets/images/Hog_Rider.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Ice Wizard')) {
+        document.getElementById('image').src = 'assets/images/Ice_Wizard.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Jessie')) {
+        document.getElementById('image').src = 'assets/images/Jessie.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Knuckles')) {
+        document.getElementById('image').src = 'assets/images/Knuckles.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Leon')) {
+        document.getElementById('image').src = 'assets/images/Leon.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Mavis')) {
+        document.getElementById('image').src = 'assets/images/Mavis.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Max')) {
+        document.getElementById('image').src = 'assets/images/Max.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Medic')) {
+        document.getElementById('image').src = 'assets/images/Medic.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Miner')) {
+        document.getElementById('image').src = 'assets/images/Miner.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Nita')) {
+        document.getElementById('image').src = 'assets/images/Nita.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Optimus Prime')) {
+        document.getElementById('image').src = 'assets/images/Optimus_Prime.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Pam')) {
+        document.getElementById('image').src = 'assets/images/Pam.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Penny')) {
+        document.getElementById('image').src = 'assets/images/Penny.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Poco')) {
+        document.getElementById('image').src = 'assets/images/Poco.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Shelly')) {
+        document.getElementById('image').src = 'assets/images/Shelly.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Tails')) {
+        document.getElementById('image').src = 'assets/images/Tails.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Tank')) {
+        document.getElementById('image').src = 'assets/images/Tank.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Trader')) {
+        document.getElementById('image').src = 'assets/images/Trader.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Witch')) {
+        document.getElementById('image').src = 'assets/images/Witch.png';
+    } else
+    if (document.getElementById('previousAnswerText').textContent.includes('Wizard')) {
+        document.getElementById('image').src = 'assets/images/Wizard.png';
+    }
+}
+
+function answerTextShow() {
+    document.getElementById('previousAnswerText').textContent = 'Previous Answer: '+answerRequirement;
+}
+
+function wrongGuessHint2() {
+    if (incorrectGuessesVal >= 1) {
+    hint2Text.style.visibility = 'visible';
+} else {
+    hint2Text.style.visibility = 'hidden';
+}
+}
+
+function wrongGuessHint3() {
+    if (incorrectGuessesVal >= 2) {
+    hint3Text.style.visibility = 'visible';
+} else {
+    hint3Text.style.visibility = 'hidden';
+}
+}
+
+document.getElementById('answerInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        document.getElementById('enterbutton').click();
+    }
+});
+
+function answerSent() {
+        if (answerInputVal.value.trim().toLowerCase() == answerRequirement.toLowerCase().trim()) {
+            winstreakVal++;
+            document.getElementById('winstreakText').textContent = 'Winstreak: '+winstreakVal;
+            answerTextShow();
+            imageShow();
+            resetHints();
+            CorrectSoundPlay();
+            resetIncorrectGuesses();
+            randomizeAnswer();
+            setHint1();
+        } else {
+            incorrectGuess();
+        }
+    }
+
+window.onload = function() {
+    randomizeAnswer();
+    setHint1();
+};
+
+</script>
+
+    </body>
+</html>
